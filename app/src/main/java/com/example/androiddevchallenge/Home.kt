@@ -24,20 +24,20 @@ import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Button
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -90,11 +90,9 @@ fun Home() {
                     Text(text = "Start 6s countdown")
                 }
             }
-
         }
     }
 }
-
 
 @Composable
 fun CircleButton(state: ButtonAnimationState, num: Int, modifier: Modifier = Modifier) {
@@ -109,7 +107,7 @@ fun CircleButton(state: ButtonAnimationState, num: Int, modifier: Modifier = Mod
                     color = lerp(Color.Yellow, Color.White, 0.5f),
                     radius = size.minDimension / 2.2f,
                 )
-                //size.width/0.2f
+                // size.width/0.2f
                 drawCircle(
                     center = Offset(size.width / 2f, size.width * 0.1f / 2),
                     color = transitionData.color,
@@ -150,4 +148,3 @@ fun updateTransitionData(state: ButtonAnimationState): TransitionData {
     }
     return remember(transition) { TransitionData(color, degrees) }
 }
-
