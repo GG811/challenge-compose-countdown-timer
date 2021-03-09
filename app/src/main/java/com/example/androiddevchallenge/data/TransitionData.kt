@@ -13,22 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge
+package com.example.androiddevchallenge.data
 
-import android.os.Bundle
-import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.runtime.State
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
 
-class MainActivity : AppCompatActivity() {
-    @ExperimentalAnimationApi
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            Home()
-        }
-    }
+class TransitionData(color: State<Color>, degrees: State<Float>) {
+    val color by color
+    val degrees by degrees
 }
-
-
-
